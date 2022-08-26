@@ -6,12 +6,21 @@
 //since 10 + 7 is 17.
 
 // Assuming inputs are valid
+// let equalsK = (arr, k) => {
+//     for (let i = 0; i < arr.length - 1; i++) {
+//         for (let j = i + 1; j < arr.length; j++) {
+//             if (arr[i] + arr[j] === k) {
+//                 return true;
+//             }
+//         }
+//     }
+//     return false;
+// };
+
 let equalsK = (arr, k) => {
     for (let i = 0; i < arr.length - 1; i++) {
-        for (let j = i + 1; j < arr.length; j++) {
-            if (arr[i] + arr[j] === k) {
-                return true;
-            }
+        if (arr.includes(k - arr[i])) {
+            return true;
         }
     }
     return false;
