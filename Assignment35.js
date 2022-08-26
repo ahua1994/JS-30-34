@@ -19,7 +19,10 @@
 
 let equalsK = (arr, k) => {
     for (let i = 0; i < arr.length - 1; i++) {
-        if (arr.includes(k - arr[i])) {
+        if (
+            arr.includes(k - arr[i]) &&
+            arr.indexOf(k - arr[i]) != arr.lastIndexOf(k - arr[i])
+        ) {
             return true;
         }
     }
